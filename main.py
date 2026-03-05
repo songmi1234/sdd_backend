@@ -277,10 +277,22 @@ async def root():
     return RedirectResponse(url='/docs')
 
 
-@app.get('/test')
-async def test():
-    logger.info("test")
-    return {test: "tets"}
+@app.get("/test")
+def test():
+    print("test")
+    # 正确写法1：简单字符串/数字
+    # return "test success"
+
+    # 正确写法2：标准字典（键为字符串）
+    return {
+        "code": 200,
+        "msg": "test success",
+        "data": {
+            "action": "inc",
+            "result": "tets"
+        }
+    }
+
 
 # @app.get("/get_test")
 # async def get_test(request):
