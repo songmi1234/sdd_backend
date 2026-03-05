@@ -306,6 +306,6 @@ async def test():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8001,
+    uvicorn.run("main:app", host="0.0.0.0", port=8000,
                 reload=True, log_config=None)
 #  uv run uvicorn main:app --host 0.0.0.0 --port 8003 --reload
