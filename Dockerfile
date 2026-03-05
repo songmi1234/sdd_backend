@@ -42,6 +42,6 @@ RUN sed -i 's/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.li
     && rm -rf /var/lib/apt/lists/*
 COPY . .
 # 把 /venv/bin 加入 PATH
-ENV PATH="/venv/bin:$PATH"
-# ENV PATH="/app/.venv/bin:$PATH"
+# ENV PATH="/venv/bin:$PATH"
+ENV PATH="/app/.venv/bin:$PATH"
 CMD ["/app/.venv/bin/uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
