@@ -277,7 +277,7 @@ async def root():
     return RedirectResponse(url='/docs')
 
 
-@app.get('test')
+@app.get('/test')
 async def test():
     logger.info("test")
     return {test: "tets"}
