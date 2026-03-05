@@ -1,0 +1,67 @@
+{
+  "全域商品推广-控成本": {
+    "advertiser_id": 1779271778331655,
+    "name": "全域计划测试",
+    "aweme_id": 4059873868514391,
+    "marketing_goal": "VIDEO_PROM_GOODS",
+    "product_ids": [3586239767043541570],
+    "delivery_setting": {
+      "smart_bid_type": "SMART_BID_CUSTOM",
+      "roi2_goal": 2.6,
+      "qcpx_mode": "QCPX_MODE_OFF",
+      "budget": 300,
+      "video_schedule_type": "SCHEDULE_FROM_NOW",
+      "deep_external_action": "AD_CONVERT_TYPE_LIVE_PURE_PAY_ROI"
+    },
+    "multi_product_creative_list": [
+      {
+        "product_id": 3586239767043541570,
+        "video_material": [
+          {
+            "image_mode": "VIDEO_VERTICAL",
+            "aweme_item_id": 7598481106787282670
+          }
+        ]
+      }
+    ]
+  },
+  "全域商品推广-放量": {
+    "advertiser_id": 1779271778331655,
+    "name": "全域计划测试",
+    "aweme_id": 4059873868514391,
+    "marketing_goal": "VIDEO_PROM_GOODS",
+    "product_ids": [3586239767043541570],
+    "delivery_setting": {
+      "smart_bid_type": "SMART_BID_CONSERVATIVE",
+      "qcpx_mode": "QCPX_MODE_OFF",
+      "budget": 30,
+      "video_schedule_type": "SCHEDULE_FROM_NOW",
+      "deep_external_action": "AD_CONVERT_TYPE_LIVE_PURE_PAY_ROI"
+    },
+    "multi_product_creative_list": [
+      {
+        "product_id": 3586239767043541570,
+        "creative_type": "PROGRAMMATIC_CREATIVE",
+        "hide_in_aweme": false,
+        "video_material": [
+          {
+            "image_mode": "VIDEO_VERTICAL",
+            "aweme_item_id": 7598481106787282670
+          }
+        ]
+      }
+    ]
+  },
+  "获取抖音号下的视频": {
+    "advertiser_id": 1779271778331655,
+    "aweme_id": 4059873868514391,
+    "filtering": {
+      "product_id": 3586239767043541570
+    }
+  },
+  "更改全域计划状态": {
+    "advertiser_id": 1779271778331655,
+    "ad_ids": [1843475953536376],
+    "opt_status": "DISABLE"
+  }
+}
