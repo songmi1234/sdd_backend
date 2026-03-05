@@ -30,6 +30,12 @@ FROM python:3.13-slim
 WORKDIR /app
 COPY --from=builder /app/.venv /app/.venv  
 
+# 优化时区
+ENV TZ=Asia/Shanghai \
+    DEBIAN_FRONTEND=noninteractive
+RUN ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime && echo ${TZ} > /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata && rm -rf /var/lib/apt/lists/*
+
+
 # 1. 安装 Node.js 运行环境
 # --no-install-recommends 保持镜像精简，rm -rf 清理缓存减少层大小
 # RUN apt-get update && apt-get install -y --no-install-recommends \
