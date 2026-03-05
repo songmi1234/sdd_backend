@@ -32,7 +32,7 @@ dependencies = [
     "yagmail>=0.15.293",
 ]
 [[tool.uv.index]]
-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+url = "https://mirrors.aliyun.com/pypi/simple/"
 default = true
 
 [tool.aerich]
