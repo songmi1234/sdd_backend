@@ -4,7 +4,7 @@ FROM python:3.13-slim AS builder
 WORKDIR /app
 
 # 安装 UV（使用 pip + 清华源，避免直接复制镜像的兼容性问题）
-RUN pip install --no-cache-dir uv -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install --no-cache-dir uv -i https://mirrors.aliyun.com/pypi/simple/
 
 # 复制依赖文件（优先复制锁文件，利用缓存）
 COPY pyproject.toml uv.lock* ./
@@ -20,7 +20,7 @@ COPY pyproject.toml uv.lock* ./
 #     && uv sync --frozen --no-install-project --index-url https://pypi.tuna.tsinghua.edu.cn/simple
 RUN uv venv /app/.venv \
     && . /app/.venv/bin/activate \
-    && uv sync --frozen --no-install-project --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+    && uv sync --frozen --no-install-project --index-url https://mirrors.aliyun.com/pypi/simple/
     
 # 运行阶段：精简镜像，仅复制必要文件
 # 运行阶段：复制虚拟环境到 /venv
