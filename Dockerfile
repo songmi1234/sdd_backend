@@ -18,13 +18,11 @@ COPY pyproject.toml uv.lock* ./
 #     && uv venv /app/.venv \
 #     && . /app/.venv/bin/activate \
 #     && uv sync --frozen --no-install-project --index-url https://pypi.tuna.tsinghua.edu.cn/simple
-RUN uv venv /app/.venv \
+RUN rm -f uv.lock \
+    # 创建虚拟环境
+    && uv venv /app/.venv \
     && . /app/.venv/bin/activate \
-    # 配置uv全局使用阿里云源（覆盖锁文件中的源）
-    && uv config set index-url https://mirrors.aliyun.com/pypi/simple/ \
-    # 删除旧锁文件（避免残留的清华源记录）
-    && rm -f uv.lock \
-    # 重新生成锁文件并同步依赖（使用阿里云源）
+    # 同步依赖：强制使用阿里云源，不使用 frozen（避免锁文件）
     && uv sync --no-install-project --index-url https://mirrors.aliyun.com/pypi/simple/
 # 运行阶段：精简镜像，仅复制必要文件
 # 运行阶段：复制虚拟环境到 /venv
